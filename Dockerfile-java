@@ -1,0 +1,1 @@
+FROM dalongrong/alpine-oraclejdk8:8.131.11-full-arthas-tz

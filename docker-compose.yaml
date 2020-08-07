@@ -1,0 +1,25 @@
+version: "3"
+services: 
+  # not work
+  #  dubbo: 
+  #     image: dalongrong/alpine-oraclejdk8:8.131.11-slim-arthas
+  #     ports: 
+  #     - "20880:20880"
+  #     command: java -jar /app/dubbo-demo-provider.one-jar.jar
+  #     volumes: 
+  #     - "./dubbo-demo-provider.one-jar.jar:/app/dubbo-demo-provider.one-jar.jar"
+   tengine: 
+      image: dalongrong/tengine:2.3.2-dubbo
+      volumes: 
+      - "./nginx.conf:/etc/nginx/nginx.conf"
+      ports: 
+      - "9090:9090"
+   tengine2: 
+      image: dalongrong/tengine:2.3.2-2
+      volumes: 
+      - "./nginx2.conf:/etc/nginx/nginx.conf"
+      - "./html:/etc/nginx/html"
+      ports: 
+      - "8081:80"
+      - "8080:8080"
+      - "3128:3128"
